@@ -51,9 +51,12 @@ sns.pairplot(df)
 ```python
 sns.heatmap(df.corr(), annot=True)
 ```
-[Lmplot](https://seaborn.pydata.org/generated/seaborn.lmplot.html?highlight=lmplot#seaborn.lmplot) gives a Scatter plot with regression line
+[Jointplot](http://seaborn.pydata.org/generated/seaborn.jointplot.html) gives visualizations with multiple pairwise plots with focus on a single relationship.
 ```python
 sns.jointplot(x='RM',y='MEDV',data=df)
+```
+[Lmplot](https://seaborn.pydata.org/generated/seaborn.lmplot.html?highlight=lmplot#seaborn.lmplot) gives a Scatter plot with regression line
+```python
 sns.lmplot(x='LSTAT', y='MEDV',data=df)
 sns.lmplot(x='LSTAT', y='RM',data=df)
 ```

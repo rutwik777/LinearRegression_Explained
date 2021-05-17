@@ -56,9 +56,18 @@ sns.lmplot(x='LSTAT', y='RM',data=df)
 ```
 
 ## 6. Perform Test_Train dataset split
-
+```python
+X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.3,random_state=101)
+```
 ## 7. Train the model
-
+```python
+from sklearn.linear_model import LinearRegression
+lm=LinearRegression()
+lm.fit(X_train, y_train)
+```
 ## 8. Perform the predictions
-
+```python
+predictions=lm.predict(X_test)
+lm.coef_
+```
 ## 9. Model Metrics and Evaluations

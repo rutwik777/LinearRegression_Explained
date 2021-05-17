@@ -1,6 +1,6 @@
 # LinearRegression_Explained
-This is a repository containing the explanation for Linear Regression using Sklearn, pandas, Numpy and Seaborn. Also perform EDA and visualisation
-This explaination is divided into following parts and look in details:
+This is a repository containing the explanation for Linear Regression using Sklearn, pandas, Numpy and Seaborn. Also performing EDA and visualisation.  
+This explaination is divided into following parts and we will look each part in detail:
 1. Understand the problem statement, dataset and choose ML model
 2. Core Mathematics Concepts
 3. Libraries Used
@@ -42,7 +42,7 @@ The [info](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.info.ht
 df.info()
 ```
 ## 5. Perform Visualisations
-We use several function from seaborn library to visualize.
+We use several function from seaborn library to visualize.  
 Seaborn is built on MatplotLib library with is built on MATLAB. So people experienced with MATLAB/OCTAVE will find it syntax similar.
 
 [Pairplot](https://seaborn.pydata.org/generated/seaborn.pairplot.html) is quickly used to plot multiple pairwise bivariate distributions
@@ -64,7 +64,7 @@ sns.lmplot(x='LSTAT', y='RM',data=df)
 ```
 
 ## 6. Perform Test_Train dataset split
-We divide the Dataset into 2 parts, Train and test respectively.
+We divide the Dataset into 2 parts, Train and test respectively.  
 We set test_size as 0.30 of dataset for validation. Random_state is used to ensure split is same everytime we execute the code
 ```python
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.3,random_state=101)
@@ -83,7 +83,8 @@ predictions=lm.predict(X_test)
 lm.coef_
 ```
 ## 9. Model Metrics and Evaluations
-The metrics are very important to inspect the accuracy of the model. The metrics are MeanAbsoluteError, MeanSquaredError, 
+The metrics are very important to inspect the accuracy of the model. The metrics are MeanAbsoluteError, MeanSquaredError and Sqaure Root of Mean Sqare Error.  
+Mean Abs Error:
 ```python
 from sklearn import metrics
 print(metrics.mean_absolute_error(y_test, predictions))

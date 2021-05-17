@@ -11,8 +11,9 @@ This explaination is divided into following parts and look in details:
 8. Perform the predictions
 9. Model Metrics and Evaluations
 
-## 1. Understand the problem Statement w.r.t dataset
-The data set is of the Housing 
+## 1. Understand the problem Statement and the dataset
+The data set is of the Housing price along with the various parameters affecting it. The target variable to be predicted is a set of continuous values; hence firming our choice to use the Linear Regeression model. The rest of the columns are features.
+
 ## 2. Core Mathematics Concepts
 
 ## 3. Libraries Used
@@ -24,15 +25,15 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 ```
 ## 4. Explore the Dataset
-We read the dataset into a Pandas datafram by using command
+We read the dataset into a Pandas dataframe
 ```python
 df=pd.read_csv('/content/housing.csv')
 ```
-The [head()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.head.html) gives the first 5 rows along with all the columns info for a quick glimpse of dataset
+The [.head()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.head.html) gives the first 5 rows along with all the columns info for a quick glimpse of dataset
 ```python
 df.head()
 ```
-The [describe()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html) function gives the description 
+The [.describe()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html) function gives the description 
 ```python
 df.describe()
 ```
@@ -68,20 +69,20 @@ We set test_size as 0.30 of dataset for validation. Random_state is used to ensu
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.3,random_state=101)
 ```
 ## 7. Train the model
-The mathematical concepts we saw above is implemented in single .fit() statement
+The mathematical concepts we saw above is implemented in single [.fit()](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) statement
 ```python
 from sklearn.linear_model import LinearRegression  #Importing the LinerRegression from sklearn
 lm=LinearRegression()                              #Create LinerRegression object so the manupulation later is easy
 lm.fit(X_train, y_train)                           #The fit happens here
 ```
 ## 8. Perform the predictions
-Prediction of the values for testing set and save it in the predictions variable. .coef_ module is used to get the coefficients(weights) that infuences the variable
+Prediction of the values for testing set and save it in the predictions variable. The .coef_ module is used to get the coefficients(weights) that infuences the values of features
 ```python
 predictions=lm.predict(X_test)
 lm.coef_
 ```
 ## 9. Model Metrics and Evaluations
-
+The metrics are very important to inspect the accuracy of the model. The metrics are MeanAbsoluteError, MeanSquaredError, 
 ```python
 from sklearn import metrics
 print(metrics.mean_absolute_error(y_test, predictions))

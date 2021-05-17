@@ -28,11 +28,11 @@ We read the dataset into a Pandas datafram by using command
 ```python
 df=pd.read_csv('/content/housing.csv')
 ```
-The head() gives the first 5 rows along with all the columns info for a quick glimpse of dataset
+The [head()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.head.html) gives the first 5 rows along with all the columns info for a quick glimpse of dataset
 ```python
 df.head()
 ```
-The describe() function gives the description 
+The [describe()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html) function gives the description 
 ```python
 df.describe()
 ```
@@ -40,7 +40,8 @@ df.describe()
 df.info()
 ```
 ## 5. Perform Visualisations
-We use seaborn library to visualize
+We use several function from seaborn library to visualize.
+Seaborn is built on MatplotLib library with is built on MATLAB. So people experienced with MATLAB/OCTAVE will find it syntax similar.
 
 [Pairplot](https://seaborn.pydata.org/generated/seaborn.pairplot.html) is quickly used to plot multiple pairwise bivariate distributions
 ```python

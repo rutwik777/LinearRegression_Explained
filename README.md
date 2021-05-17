@@ -28,9 +28,11 @@ We read the dataset into a Pandas datafram by using command
 ```python
 df=pd.read_csv('/content/housing.csv')
 ```
+The head() gives the first 5 rows along with all the columns info for a quick glimpse of dataset
 ```python
 df.head()
 ```
+The describe() function gives the description 
 ```python
 df.describe()
 ```
@@ -56,21 +58,26 @@ sns.lmplot(x='LSTAT', y='RM',data=df)
 ```
 
 ## 6. Perform Test_Train dataset split
+We divide the Dataset into 2 parts, Train and test respectively.
+We set test_size as 0.30 of dataset for validation. Random_state is used to ensure split is same everytime we execute the code
 ```python
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.3,random_state=101)
 ```
 ## 7. Train the model
+The mathematical concepts we saw above is implemented in single .fit() statement
 ```python
-from sklearn.linear_model import LinearRegression
-lm=LinearRegression()
-lm.fit(X_train, y_train)
+from sklearn.linear_model import LinearRegression  #Importing the LinerRegression from sklearn
+lm=LinearRegression()                              #Create LinerRegression object so the manupulation later is easy
+lm.fit(X_train, y_train)                           #The fit happens here
 ```
 ## 8. Perform the predictions
+Prediction of the values for testing set and save it in the predictions variable. .coef_ module is used to get the coefficients(weights) that infuences the variable
 ```python
 predictions=lm.predict(X_test)
 lm.coef_
 ```
 ## 9. Model Metrics and Evaluations
+
 ```python
 from sklearn import metrics
 print(metrics.mean_absolute_error(y_test, predictions))

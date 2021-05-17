@@ -12,7 +12,7 @@ This explaination is divided into following parts and we will look each part in 
 9. Model Metrics and Evaluations
 
 ## 1. Understand the problem Statement and the dataset
-The data set is of the Housing price along with the various parameters affecting it. The target variable to be predicted is a set of continuous values; hence firming our choice to use the Linear Regeression model. The rest of the columns are features.
+The data set is of the Housing price along with the various parameters affecting it. The target variable to be predicted is a set of continuous values; hence firming our choice to use the Linear Regeression model.
 
 ## 2. Core Mathematics Concepts
 

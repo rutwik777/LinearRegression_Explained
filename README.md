@@ -37,6 +37,7 @@ The [.describe()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pan
 ```python
 df.describe()
 ```
+The [info](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.info.html) function gives the quick infor on columns, type of data in them and valid entries
 ```python
 df.info()
 ```

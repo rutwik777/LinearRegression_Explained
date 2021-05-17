@@ -83,8 +83,7 @@ predictions=lm.predict(X_test)
 lm.coef_
 ```
 ## 9. Model Metrics and Evaluations
-The metrics are very important to inspect the accuracy of the model. The metrics are MeanAbsoluteError, MeanSquaredError and Sqaure Root of Mean Sqare Error.  
-Mean Abs Error:
+The metrics are very important to inspect the accuracy of the model. The metrics are MeanAbsoluteError, MeanSquaredError and Sqaure Root of Mean Sqare Error.
 ```python
 from sklearn import metrics
 print(metrics.mean_absolute_error(y_test, predictions))

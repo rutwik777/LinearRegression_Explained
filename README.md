@@ -71,3 +71,9 @@ predictions=lm.predict(X_test)
 lm.coef_
 ```
 ## 9. Model Metrics and Evaluations
+```python
+from sklearn import metrics
+print(metrics.mean_absolute_error(y_test, predictions))
+print(metrics.mean_squared_error(y_test, predictions))
+print(np.sqrt(metrics.mean_squared_error(y_test, predictions)))
+```

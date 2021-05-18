@@ -37,7 +37,7 @@ The [.describe()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pan
 ```python
 df.describe()
 ```
-The [info](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.info.html) function gives the quick infor on columns, type of data in them and valid entries
+The [info()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.info.html) function gives the quick infor on columns, type of data in them and valid entries
 ```python
 df.info()
 ```
@@ -83,7 +83,10 @@ predictions=lm.predict(X_test)
 lm.coef_
 ```
 ## 9. Model Metrics and Evaluations
-The metrics are very important to inspect the accuracy of the model. The metrics are MeanAbsoluteError, MeanSquaredError and Sqaure Root of Mean Sqare Error.
+The metrics are very important to inspect the accuracy of the model. The metrics are  
+MeanAbsoluteError : difference between predicted versus actual value  
+MeanSquaredError :  average squared difference between the estimated values and the actual value
+Sqaure Root of Mean Sqare Error : Same as MeanAbsolute Error, a good measure of accuracy, but only to compare prediction errors of different models or model configurations for a particular variable.
 ```python
 from sklearn import metrics
 print(metrics.mean_absolute_error(y_test, predictions))

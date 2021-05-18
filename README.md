@@ -84,9 +84,9 @@ lm.coef_
 ```
 ## 9. Model Metrics and Evaluations
 The metrics are very important to inspect the accuracy of the model. The metrics are  
-MeanAbsoluteError : difference between predicted versus actual value  
-MeanSquaredError :  average squared difference between the estimated values and the actual value
-Sqaure Root of Mean Sqare Error : Same as MeanAbsolute Error, a good measure of accuracy, but only to compare prediction errors of different models or model configurations for a particular variable.
+**MeanAbsoluteError** : difference between predicted versus actual value  
+**MeanSquaredError** :  average squared difference between the estimated values and the actual value  
+**Sqaure Root of Mean Sqare Error** : Same as MeanAbsolute Error, a good measure of accuracy, but only to compare prediction errors of different models or model configurations for a particular variable.
 ```python
 from sklearn import metrics
 print(metrics.mean_absolute_error(y_test, predictions))

@@ -24,7 +24,7 @@ Linear regression involves moving a line such that it is the best approximation 
   
   
 Absolute Trick
-A line with slope  and y-intercept  would have equation . To move the line closer to the point , the application of the absolute trick involves changing the equation of the line to
+A line with slope  and y-intercept  would have equation ![equation](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/Line.gif). To move the line closer to the point , the application of the absolute trick involves changing the equation of the line to
 
 
 where  is the learning rate and is a small number whose sign depends on whether the point is above or below the line.

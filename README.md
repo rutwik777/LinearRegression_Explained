@@ -15,6 +15,10 @@ This explaination is divided into following parts and we will look each part in 
 The data set is of the Housing price along with the various parameters affecting it. The target variable to be predicted is a set of continuous values; hence firming our choice to use the Linear Regeression model.
 
 ## 2. Core Mathematics Concepts
+Linear regression attempts to model a relationship between 2 variables by fitting a linear equation of the form Y = a + bX, where X is the explanatory variable and Y is the dependent variable.  
+![alt Linear regression](https://www.jmp.com/en_hk/statistics-knowledge-portal/what-is-multiple-regression/fitting-multiple-regression-model/_jcr_content/par/styledcontainer_2069/par/lightbox_4130/lightboxImage.img.png/1548704005203.png)  
+![](https://i.ytimg.com/vi/P7SEzp-ADIs/maxresdefault.jpg)  
+![](https://miro.medium.com/max/1060/1*Yl73bpBV41F81Z1IARx8FQ.png)
 
 ## 3. Libraries Used
 The following libraries are used intitally
@@ -37,7 +41,7 @@ The [.describe()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pan
 ```python
 df.describe()
 ```
-The [info()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.info.html) function gives the quick infor on columns, type of data in them and valid entries
+The [.info()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.info.html) function gives the quick infor on columns, type of data in them and valid entries
 ```python
 df.info()
 ```

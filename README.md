@@ -1,5 +1,5 @@
 # LinearRegression_Explained
-This is a repository containing the explanation for Linear Regression using Sklearn, pandas, Numpy and Seaborn. Also performing EDA and visualisation.  
+This is a repository containing the explanation for Linear Regression using **Sklearn, pandas, Numpy and Seaborn**. Also performing Exploratory Data Analysis and Visualisation.  
 This explaination is divided into following parts and we will look each part in detail:
 1. Understand the problem statement, dataset and choose ML model
 2. Core Mathematics Concepts
@@ -12,25 +12,29 @@ This explaination is divided into following parts and we will look each part in 
 9. Model Metrics and Evaluations
 
 ## 1. Understand the problem Statement and the dataset
-The data set is of the Housing price along with the various parameters affecting it. The target variable to be predicted is a set of continuous values; hence firming our choice to use the Linear Regeression model.
+The data set is of the Housing price along with the various parameters affecting it. The **target variable** to be predicted is a **set of continuous values**; hence **firming our choice** to use the **Linear Regeression model**.
 
-## 2. Core Mathematics Concepts
-Linear regression attempts to model a relationship between 2 variables by fitting a linear equation of the form Y = a + bX, where X is the explanatory variable and Y is the dependent variable.  
-![alt Linear regression](https://www.jmp.com/en_hk/statistics-knowledge-portal/what-is-multiple-regression/fitting-multiple-regression-model/_jcr_content/par/styledcontainer_2069/par/lightbox_4130/lightboxImage.img.png/1548704005203.png)  
-
- 
+## 2. Core Mathematics Concepts    
 **Tricks**  
-Linear regression involves moving a line such that it is the best approximation for a set of points. The absolute trick and square trick are techniques to move a line closer to a point.  
+Linear regression involves **moving a line such that it is the best approximation for a set of points**. The absolute trick and square trick are techniques to move a line closer to a point. Tricks are used for our understanding purposes.  
   
   
-**Absolute Trick**  
+**i) Absolute Trick**  
 A line with slope w1 and y-intercept w2 would have equation ![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/CodeCogsEqn.svg). To move the line closer to the point (p,q), the application of the absolute trick involves changing the equation of the line to ![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/y.svg) where ![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/alpha.svg) is the learning rate and is a small number whose sign depends on whether the point is above or below the line.  
 <img align="centre" width="700" src="https://miro.medium.com/max/1060/1*Yl73bpBV41F81Z1IARx8FQ.png">  
-**Square Trick**  
+**ii) Square Trick**  
 A line with slope w1 and y-intercept w2 would have equation ![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/CodeCogsEqn.svg). The goal is to move the line closer to the point (p,q). A point on the line with the same y-coordinate as  might be given by (p,q'). The distance between (p,q) and (p,q') is given by (q-q')
 . Following application of the square trick, the new equation would be given by ![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/sqtrick.svg) where ![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/alpha.svg) is the learning rate and is a small number whose sign **does not depend** on whether the point is above or below the line. This is due to the inclusion of the 
  term that takes care of this implicitly.
-<img align="centre" width="700" src="https://i.ytimg.com/vi/P7SEzp-ADIs/maxresdefault.jpg">
+<img align="centre" width="700" src="https://i.ytimg.com/vi/P7SEzp-ADIs/maxresdefault.jpg">  
+  
+  
+**Gradient Descent (What actually happens in .fit())**  
+It involves taking the derivative, or gradient, of the error function with respect to the weights, and taking a step in the direction of largest decrease.  
+<img align="centre" width="700" src="https://i.ytimg.com/vi/b4Vyma9wPHo/maxresdefault.jpg">  
+  The equation is as follows  
+  ![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/Gradient%20Descent.svg)  
+  Following several similar steps, the function will arrive at either a minimum or a value where the error is small. This is also referred to as “decreasing the error function by walking along the negative of its gradient".
 ## 3. Libraries Used
 The following libraries are used intitally
 ```python
@@ -58,7 +62,7 @@ df.info()
 ```
 ## 5. Perform Visualisations
 We use several function from seaborn library to visualize.  
-Seaborn is built on MatplotLib library with is built on MATLAB. So people experienced with MATLAB/OCTAVE will find it syntax similar.
+Seaborn is built on MatplotLib library with is built on MATLAB. So people experienced with MATLAB/OCTAVE will find its syntax similar.
 
 [Pairplot](https://seaborn.pydata.org/generated/seaborn.pairplot.html) is quickly used to plot multiple pairwise bivariate distributions
 ```python
@@ -98,10 +102,13 @@ predictions=lm.predict(X_test)
 lm.coef_
 ```
 ## 9. Model Metrics and Evaluations
-The metrics are very important to inspect the accuracy of the model. The metrics are  
-**MeanAbsoluteError** : difference between predicted versus actual value  
-**MeanSquaredError** :  average squared difference between the estimated values and the actual value  
-**Sqaure Root of Mean Sqare Error** : Same as MeanAbsolute Error, a good measure of accuracy, but only to compare prediction errors of different models or model configurations for a particular variable.
+The metrics are very important to inspect the accuracy of the model. The metrics are:    
+  
+**i) Mean Absolute Error (MAE)** : It is the total sum of differences between predicted versus actual value divied by the number of points in dataset. Equation given by:  
+![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/MAE.svg)  
+**ii) Mean Squared Error (MSE)** :  It is the total of average squared difference between the estimated values and the actual values. Equation given by:  
+![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/MSE.svg)  
+**iii) Sqaure Root of Mean Sqare Error** : Same as Mean Absolute Error, a good measure of accuracy, but only to compare prediction errors of different models or model configurations for a particular variable.
 ```python
 from sklearn import metrics
 print(metrics.mean_absolute_error(y_test, predictions))

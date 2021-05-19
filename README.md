@@ -17,17 +17,20 @@ The data set is of the Housing price along with the various parameters affecting
 ## 2. Core Mathematics Concepts
 Linear regression attempts to model a relationship between 2 variables by fitting a linear equation of the form Y = a + bX, where X is the explanatory variable and Y is the dependent variable.  
 ![alt Linear regression](https://www.jmp.com/en_hk/statistics-knowledge-portal/what-is-multiple-regression/fitting-multiple-regression-model/_jcr_content/par/styledcontainer_2069/par/lightbox_4130/lightboxImage.img.png/1548704005203.png)  
-![](https://i.ytimg.com/vi/P7SEzp-ADIs/maxresdefault.jpg)  
-![](https://miro.medium.com/max/1060/1*Yl73bpBV41F81Z1IARx8FQ.png)  
+
+ 
 **Tricks**  
 Linear regression involves moving a line such that it is the best approximation for a set of points. The absolute trick and square trick are techniques to move a line closer to a point.  
   
   
-Absolute Trick
-A line with slope  and y-intercept  would have equation ![equation](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/Line.gif). To move the line closer to the point , the application of the absolute trick involves changing the equation of the line to
-
-
-where  is the learning rate and is a small number whose sign depends on whether the point is above or below the line.
+**Absolute Trick**  
+A line with slope w1 and y-intercept w2 would have equation ![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/CodeCogsEqn.svg). To move the line closer to the point (p,q), the application of the absolute trick involves changing the equation of the line to ![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/y.svg) where ![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/alpha.svg) is the learning rate and is a small number whose sign depends on whether the point is above or below the line.  
+<img align="centre" width="700" src="https://miro.medium.com/max/1060/1*Yl73bpBV41F81Z1IARx8FQ.png">  
+**Square Trick**  
+A line with slope w1 and y-intercept w2 would have equation ![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/CodeCogsEqn.svg). The goal is to move the line closer to the point (p,q). A point on the line with the same y-coordinate as  might be given by (p,q'). The distance between (p,q) and (p,q') is given by (q-q')
+. Following application of the square trick, the new equation would be given by ![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/sqtrick.svg) where ![](https://github.com/rutwik777/LinearRegression_Explained/blob/main/LinearReg_Images/alpha.svg) is the learning rate and is a small number whose sign **does not depend** on whether the point is above or below the line. This is due to the inclusion of the 
+ term that takes care of this implicitly.
+<img align="centre" width="700" src="https://i.ytimg.com/vi/P7SEzp-ADIs/maxresdefault.jpg">
 ## 3. Libraries Used
 The following libraries are used intitally
 ```python
